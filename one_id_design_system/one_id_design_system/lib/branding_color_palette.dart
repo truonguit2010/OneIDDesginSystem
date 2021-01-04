@@ -23,3 +23,11 @@ class BrandingColorPalette {
   static const Color primarya100 = Color(0x2F6BFF0C);
 
 }
+
+extension EXColor on Color {
+  String get hexValue {
+    return '0x${value.toRadixString(16).padLeft(8, '0').toUpperCase()}';
+  }
+}
+
+//

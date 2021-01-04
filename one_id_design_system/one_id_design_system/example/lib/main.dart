@@ -1,3 +1,4 @@
+import 'package:example/branding_color_palette_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Design System Demo'),
     );
   }
 }
@@ -97,13 +98,11 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            RaisedButton(child: Text('Color Palette'),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BrandingColorPalettePage()),);
+              },
+            )
           ],
         ),
       ),

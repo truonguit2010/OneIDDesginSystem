@@ -5,15 +5,33 @@ import 'package:one_id_design_system/branding_color_palette.dart';
 
 class BrandingColorPalettePage extends StatelessWidget {
 
+  List<SectorData> datas = [
+    SectorData(
+      sectorName: 'Brand',
+      sectorDescription: 'The colors that follow the brand identity.',
+      colors: [
+        ColorItemData(
+          color: BrandingColorPalette.branda500,
+          colorName: 'branda500',
+          colorValue: BrandingColorPalette.branda500.hexValue
+        ),
+
+        ColorItemData(
+            color: BrandingColorPalette.brandb500,
+            colorName: 'brandb500',
+            colorValue: BrandingColorPalette.brandb500.hexValue
+        ),
+      ]
+    )
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Branding Color Palatte'),),
       body: SingleChildScrollView(
         child: Column(
-          children: [
-
-          ],
+          children: datas.map((e) { return ColorSector(sectorData: e,); }).toList(),
         ),
       ),
     );
@@ -22,10 +40,22 @@ class BrandingColorPalettePage extends StatelessWidget {
 }
 
 class ColorItemData {
-  Color color;
-  String colorName;
-  String colorValue;
+  final Color color;
+  final String colorName;
+  final String colorValue;
+
+  ColorItemData({this.color, this.colorName, this.colorValue});
 }
+
+class SectorData {
+  final String sectorName;
+  final String sectorDescription;
+  final List<ColorItemData> colors;
+
+  SectorData({this.sectorName, this.sectorDescription, this.colors});
+}
+
+
 
 class ColorItem extends StatelessWidget {
   final ColorItemData colorItemData;
@@ -35,8 +65,8 @@ class ColorItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
-      height: 130,
+      width: 150,
+      height: 151,
       child: Column(
         children: [
           Container(
@@ -70,21 +100,20 @@ class HorizontalColorItemList extends StatelessWidget {
 }
 
 class ColorSector extends StatelessWidget {
-  final String sectorName;
-  final String sectorDescription;
-  final List<ColorItemData> colors;
+  final SectorData sectorData;
 
-  ColorSector({this.sectorName, this.sectorDescription, this.colors});
+  ColorSector({ @required this.sectorData });
 
   @override
   Widget build(BuildContext context) {
 
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(sectorName),
-          Text(sectorDescription),
-          HorizontalColorItemList(colors),
+          Text(sectorData.sectorName),
+          Text(sectorData.sectorDescription),
+          HorizontalColorItemList(sectorData.colors),
         ],
       ),
     );
