@@ -22,6 +22,39 @@ class BrandingColorPalettePage extends StatelessWidget {
             colorValue: BrandingColorPalette.brandb500.hexValue
         ),
       ]
+    ),
+
+    SectorData(
+        sectorName: 'Primary',
+        sectorDescription: 'The main accent color of the product, used for interactive elements such as button, tag, tooltip, etc',
+        colors: [
+          ColorItemData(
+              color: BrandingColorPalette.primarya500,
+              colorName: 'primarya500',
+              colorValue: BrandingColorPalette.primarya500.hexValue
+          ),
+
+          ColorItemData(
+              color: BrandingColorPalette.primarya400,
+              colorName: 'primarya400',
+              colorValue: BrandingColorPalette.primarya400.hexValue
+          ),
+          ColorItemData(
+              color: BrandingColorPalette.primarya300,
+              colorName: 'primarya300',
+              colorValue: BrandingColorPalette.primarya300.hexValue
+          ),
+          ColorItemData(
+              color: BrandingColorPalette.primarya200,
+              colorName: 'primarya200',
+              colorValue: BrandingColorPalette.primarya200.hexValue
+          ),
+          ColorItemData(
+              color: BrandingColorPalette.primarya100,
+              colorName: 'primarya100',
+              colorValue: BrandingColorPalette.primarya100.hexValue
+          ),
+        ]
     )
   ];
 
@@ -91,6 +124,7 @@ class HorizontalColorItemList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
         child: Row(
           children: this.colors.map((e) { return ColorItem(e); }).toList(),
         ),
