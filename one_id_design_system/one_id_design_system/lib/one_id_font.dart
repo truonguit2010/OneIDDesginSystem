@@ -91,28 +91,28 @@ extension ODSTextStyleExtension on ODSTextStyle {
         return TextStyle(
           fontFamily: OneIdFont.Medium.fontFamily,
           fontSize: ODSFontSize.Size48.fontSize,
-          height: 56,
+//          height: 56,
           color: color
         );
       case ODSTextStyle.T48R:
         return TextStyle(
             fontFamily: OneIdFont.Regular.fontFamily,
             fontSize: ODSFontSize.Size48.fontSize,
-            height: 56,
+//            height: 56,
             color: color
         );
       case ODSTextStyle.T30M:
         return TextStyle(
             fontFamily: OneIdFont.Medium.fontFamily,
             fontSize: ODSFontSize.Size30.fontSize,
-            height: 38,
+//            height: 38,
             color: color
         );
       case ODSTextStyle.T30R:
         return TextStyle(
             fontFamily: OneIdFont.Regular.fontFamily,
             fontSize: ODSFontSize.Size30.fontSize,
-            height: 38,
+//            height: 38,
             color: color
         );
 
@@ -120,14 +120,14 @@ extension ODSTextStyleExtension on ODSTextStyle {
         return TextStyle(
             fontFamily: OneIdFont.Medium.fontFamily,
             fontSize: ODSFontSize.Size24.fontSize,
-            height: 32,
+//            height: 32,
             color: color
         );
       case ODSTextStyle.T24R:
         return TextStyle(
             fontFamily: OneIdFont.Regular.fontFamily,
             fontSize: ODSFontSize.Size24.fontSize,
-            height: 32,
+//            height: 32,
             color: color
         );
 
@@ -135,14 +135,14 @@ extension ODSTextStyleExtension on ODSTextStyle {
         return TextStyle(
             fontFamily: OneIdFont.Medium.fontFamily,
             fontSize: ODSFontSize.Size20.fontSize,
-            height: 28,
+//            height: 28,
             color: color
         );
       case ODSTextStyle.T20R:
         return TextStyle(
             fontFamily: OneIdFont.Regular.fontFamily,
             fontSize: ODSFontSize.Size20.fontSize,
-            height: 28,
+//            height: 28,
             color: color
         );
 
@@ -150,14 +150,14 @@ extension ODSTextStyleExtension on ODSTextStyle {
         return TextStyle(
             fontFamily: OneIdFont.Medium.fontFamily,
             fontSize: ODSFontSize.Size16.fontSize,
-            height: 24,
+//            height: 24,
             color: color
         );
       case ODSTextStyle.T16R:
         return TextStyle(
             fontFamily: OneIdFont.Regular.fontFamily,
             fontSize: ODSFontSize.Size16.fontSize,
-            height: 24,
+//            height: 24,
             color: color
         );
 
@@ -165,14 +165,14 @@ extension ODSTextStyleExtension on ODSTextStyle {
         return TextStyle(
             fontFamily: OneIdFont.Medium.fontFamily,
             fontSize: ODSFontSize.Size16.fontSize,
-            height: 20,
+//            height: 20,
             color: color
         );
       case ODSTextStyle.T16R20:
         return TextStyle(
             fontFamily: OneIdFont.Regular.fontFamily,
             fontSize: ODSFontSize.Size16.fontSize,
-            height: 20,
+//            height: 20,
             color: color
         );
 
@@ -180,14 +180,14 @@ extension ODSTextStyleExtension on ODSTextStyle {
         return TextStyle(
             fontFamily: OneIdFont.Medium.fontFamily,
             fontSize: ODSFontSize.Size14.fontSize,
-            height: 20,
+//            height: 20,
             color: color
         );
       case ODSTextStyle.T14R:
         return TextStyle(
             fontFamily: OneIdFont.Regular.fontFamily,
             fontSize: ODSFontSize.Size14.fontSize,
-            height: 20,
+//            height: 20,
             color: color
         );
 
@@ -195,14 +195,14 @@ extension ODSTextStyleExtension on ODSTextStyle {
         return TextStyle(
             fontFamily: OneIdFont.Medium.fontFamily,
             fontSize: ODSFontSize.Size12.fontSize,
-            height: 16,
+//            height: 16,
             color: color
         );
       case ODSTextStyle.T12R:
         return TextStyle(
             fontFamily: OneIdFont.Regular.fontFamily,
             fontSize: ODSFontSize.Size12.fontSize,
-            height: 16,
+//            height: 16,
             color: color
         );
       default:
