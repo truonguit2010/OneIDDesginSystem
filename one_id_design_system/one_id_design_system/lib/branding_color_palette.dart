@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 /// https://ds.id.vin/691ac4900/v/5405/p/39569a-color
 ///
 class BrandingColorPalette {
+  static const Color alphaBlendBackground = Color(0xFF);
 
   ///
   /// Brand
