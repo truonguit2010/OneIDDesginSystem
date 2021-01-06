@@ -3,21 +3,67 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:one_id_design_system/one_id_font.dart';
 import 'package:one_id_design_system/branding_color_palette.dart';
+import 'package:one_id_design_system/one_id_layout.dart';
 
-const String DEMO_TEXT = 'Smart assistant\n for Vietnamese people';
+const String DEMO_TEXT = 'Smart assistant for Vietnamese people';
 
 class TypographyDemoPage extends StatelessWidget {
 
 
 
   List<DemoFontData> demoFontDatas = [
+    // -------------------------------------------------------------------------
     DemoFontData(
-      textStyle: ODSTextStyle.T48M.textStyleWithColor(),
+        textStyle: ODSTextStyle.T24M.textStyleWithColor(),
+        demoText: DEMO_TEXT
+    ),
+
+    DemoFontData(
+        textStyle: ODSTextStyle.T24R.textStyleWithColor(),
+        demoText: DEMO_TEXT
+    ),
+
+    // -------------------------------------------------------------------------
+    DemoFontData(
+      textStyle: ODSTextStyle.T20M.textStyleWithColor(),
       demoText: DEMO_TEXT
     ),
 
     DemoFontData(
-        textStyle: ODSTextStyle.T48R.textStyleWithColor(),
+        textStyle: ODSTextStyle.T20R.textStyleWithColor(),
+        demoText: DEMO_TEXT
+    ),
+
+    // -------------------------------------------------------------------------
+    DemoFontData(
+        textStyle: ODSTextStyle.T16M.textStyleWithColor(),
+        demoText: DEMO_TEXT
+    ),
+
+    DemoFontData(
+        textStyle: ODSTextStyle.T16R.textStyleWithColor(),
+        demoText: DEMO_TEXT
+    ),
+
+    // -------------------------------------------------------------------------
+    DemoFontData(
+        textStyle: ODSTextStyle.T14M.textStyleWithColor(),
+        demoText: DEMO_TEXT
+    ),
+
+    DemoFontData(
+        textStyle: ODSTextStyle.T14R.textStyleWithColor(),
+        demoText: DEMO_TEXT
+    ),
+
+    // -------------------------------------------------------------------------
+    DemoFontData(
+        textStyle: ODSTextStyle.T12M.textStyleWithColor(),
+        demoText: DEMO_TEXT
+    ),
+
+    DemoFontData(
+        textStyle: ODSTextStyle.T12R.textStyleWithColor(),
         demoText: DEMO_TEXT
     ),
   ];
@@ -54,6 +100,7 @@ class DemoFontListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(top: ODSFullColumnLayout.PADDING),
       child: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -96,6 +143,7 @@ class DemoFontItemState extends State<DemoFontItemWidget> {
       },
       child: Container(
         width: double.infinity,
+        height: 70,
         child: _isShowingText ? DemoFontItemTextWidget(demoFontData: demoFontData) : DemoFontItemInfoWidget(demoFontData: demoFontData,),
       ),
 
@@ -113,10 +161,16 @@ class DemoFontItemTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
+      padding: EdgeInsets.only(left: ODSFullColumnLayout.PADDING, right: ODSFullColumnLayout.PADDING),
       width: double.infinity,
-      child: Text(
-        demoFontData.demoText,
-        style: demoFontData.textStyle,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Text(demoFontData.demoText, style: demoFontData.textStyle, textAlign: TextAlign.center,),
+          )
+        ],
       ),
     );
   }
@@ -134,13 +188,13 @@ class DemoFontItemInfoWidget extends StatelessWidget {
     } else if (f.contains('SF')) {
       combinedResult += 'S';
     }
-    combinedResult += demoFontData.textStyle.fontSize.toString();
+    combinedResult += demoFontData.textStyle.fontSize.round().toString();
     if (f.contains('Regular')) {
       combinedResult += 'R';
     } else if (f.contains('Medium')) {
       combinedResult += 'M';
     }
-    combinedResult += demoFontData.textStyle.height.toString();
+//    combinedResult += demoFontData.textStyle.height.toString();
     return combinedResult;
   }
 
@@ -149,11 +203,11 @@ class DemoFontItemInfoWidget extends StatelessWidget {
   }
 
   String get _fontSize {
-    return '';
+    return '${demoFontData.textStyle.fontSize}';
   }
 
   String get _lineHeight {
-    return '';
+    return '${demoFontData.textStyle.height}';
   }
 
   Color _fontTitleColor = BrandingColorPalette.ink500;
@@ -177,7 +231,9 @@ class DemoFontItemInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(left: ODSFullColumnLayout.PADDING, right: ODSFullColumnLayout.PADDING),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(_fontTitle,
             style: _fontTitleTextStyle,
@@ -186,16 +242,17 @@ class DemoFontItemInfoWidget extends StatelessWidget {
           Row(
             children: [
 
-//              Flexible(
-//                child: _buildInfoColumnWidget('Family', _fontFamily)
-//              ),
-              _buildInfoColumnWidget('Family', _fontFamily),
+              Expanded(
+                child: _buildInfoColumnWidget('Family', _fontFamily)
+              ),
 
               _buildInfoColumnWidget('Size', _fontSize),
 
               _buildInfoColumnWidget('Line height', _lineHeight)
             ],
           ),
+
+//          Text(demoFontData.demoText, style: demoFontData.textStyle,)
         ],
       ),
     );
@@ -203,7 +260,9 @@ class DemoFontItemInfoWidget extends StatelessWidget {
 
   Widget _buildInfoColumnWidget(String header, String infomation) {
     return Container(
+      padding: EdgeInsets.only(left: ODSFullColumnLayout.PADDING, right: ODSFullColumnLayout.PADDING),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(header, style: _headerTextStyle,),
           Text(infomation, style: _infoTextStyle,),
