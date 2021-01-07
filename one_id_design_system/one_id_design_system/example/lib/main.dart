@@ -1,4 +1,5 @@
 import 'package:example/branding_color_palette_page.dart';
+import 'package:example/layout_demo_page.dart';
 import 'package:example/typography_demo_page.dart';
 import 'package:flutter/material.dart';
 
@@ -109,8 +110,13 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => TypographyDemoPage()),);
               },
-            )
+            ),
 
+            RaisedButton(child: Text('Column Layout Demo'),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LayoutDemoPage()),);
+              },
+            )
 
           ],
         ),
